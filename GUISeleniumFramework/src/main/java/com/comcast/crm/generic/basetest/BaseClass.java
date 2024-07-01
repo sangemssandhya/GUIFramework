@@ -1,5 +1,6 @@
 package com.comcast.crm.generic.basetest;
 
+
 import java.sql.SQLException;
 
 import org.openqa.selenium.WebDriver;
@@ -15,25 +16,32 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.comcast.crm.generic.databaseutlity.DataBaseUtility;
 import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
-import com.comcast.crm.objectrepositoryutility.Home;
+import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 import com.comcast.crm.objectrepositoryutility.LoginPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+@Listeners(com.comcast.crm.generic.listenerutility.ListImpClass.class)
 public class BaseClass {
 	/* Create Object */
 	public DataBaseUtility dbLib = new DataBaseUtility();
 	public FileUtility fLib = new FileUtility();
+	 public WebDriverUtility wdu=new WebDriverUtility();
 	public ExcelUtility eLib = new ExcelUtility();
 	public JavaUtility jLib = new JavaUtility();
 	public  WebDriver driver = null;
 	public  static WebDriver sdriver = null;
+	public ExtentSparkReporter spark;
+	public ExtentReports report;
 
 
 	
@@ -41,6 +49,16 @@ public class BaseClass {
 		public void configBS() throws Throwable {
 			System.out.println("===Connect to DB , Report Config===");
 			dbLib.getDbconnection();
+			ExtentSparkReporter spark=new ExtentSparkReporter("./AdavnceReport/reports1.html");
+			spark.config().setDocumentTitle("Crm test suite results");
+			spark.config().setReportName("crm report");
+			spark.config().setTheme(Theme.DARK);
+			
+			//add env information and create test
+			 report=new ExtentReports();
+			report.attachReporter(spark);
+			report.setSystemInfo("OS", "Window-10");
+			report.setSystemInfo("BROWSER","CHROME-100");
 		}
 		
 		
@@ -89,9 +107,11 @@ public class BaseClass {
 	    
 		@AfterMethod(groups = {"smokeTest", "regressionTest"})
 		public void configAM() {
+		
+			LoginPage Lp=new LoginPage(driver);
+			Lp.getLogoutLk();
 			System.out.println("=logout=");
-			Home hp = new Home(driver);
-			hp.logout();
+			
 		}
 		
 	    
@@ -105,6 +125,7 @@ public class BaseClass {
 		public void configAS() throws SQLException {
 			System.out.println("===close Db , Report backUP====");
 			dbLib.closeDbconnection();
+			report.flush();
 			
 		}
 	  

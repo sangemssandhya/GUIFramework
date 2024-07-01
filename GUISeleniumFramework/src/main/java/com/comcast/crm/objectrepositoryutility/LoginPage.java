@@ -24,15 +24,16 @@ public class LoginPage extends WebDriverUtility{                              //
 		 PageFactory.initElements(driver, this);
 	 }
 	                           
-	@FindBy(name="user_name")                        // Rule-2 Object Creation
+	@FindBy(xpath="//input[@name='sadmun']")                        // Rule-2 Object Creation
 	private WebElement usernameEdt;
 	
-	@FindBy(name="user_password")
+	@FindBy(xpath="//input[@name='sadmpw']")
 	private WebElement passwordEdt;
 	
-	@FindBy(id = "submitButton")
+	@FindBy(xpath="//button[@name='login']")
 	private WebElement loginBtn;
-	     
+	@FindBy(xpath="//a[text()='Logout']")
+	private WebElement LogoutLk;
 	
 	                                             
 	public WebElement getUsernameEdt() {            //Rule-4 : Object Encapsulation
@@ -61,6 +62,15 @@ public class LoginPage extends WebDriverUtility{                              //
 		 passwordEdt.sendKeys(password);
 		 loginBtn.click();
 	 }
+
+public WebElement getLogoutLk() {
+	return LogoutLk;
+}
+
+
+public WebDriver getDriver() {
+	return driver;
+}
 	
 	
 }
