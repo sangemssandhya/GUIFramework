@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>TestNG:  Test1</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test1</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Jul 01 12:16:43 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>21 seconds (21708 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.comcast.crm.HMStest.CreateRegisterAdmitAllocateRoomTest.CreateRegisterAdmitAllocateRoom()'><b>CreateRegisterAdmitAllocateRoom</b><br>Test class: com.comcast.crm.HMStest.CreateRegisterAdmitAllocateRoomTest<br/>
+<a href="#Output-494269792" onClick='toggleBox("Output-494269792", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-494269792" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-494269792">
+Navigate to Patient Info Page<br/>
+Navigate to Patient Registration Page<br/>
+Read FirstName data from Excel<br/>
+Enter the data into firstname TextField<br/>
+Read LastName data from Excel<br/>
+Enter the data into Lastname TextField<br/>
+Select OPDpatient DropDown <br/>
+Enter the data into Address TextField <br/>
+Enter the data into Phonenum TextField<br/>
+Enter the data into Email TextField<br/>
+Select genderDropDown <br/>
+Enter the data into Email TextField <br/>
+Select genderDropDown <br/>
+Click on submit Button <br/>
+Navigate to Patient Information page<br/>
+Validating the patient name with allocating patient fiirstname  <br/>
+ click on Admitting Patient to Hsptl <br/>
+ Read the PartialURL From Excel <br/>
+Switch the Window <br/>
+Enter The Data Into PatientDisease TextField <br/>
+Select the RoomDropDown <br/>
+Click On SubMit Button <br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>com.comcast.crm.HMStest.CreateRegisterAdmitAllocateRoomTest@6f01b95f</td></tr>
+<tr>
+<td title='com.comcast.crm.HMStest.CreatePatientOPDInvoiceTest.CreatePatientOPDInvoiceTest()'><b>CreatePatientOPDInvoiceTest</b><br>Test class: com.comcast.crm.HMStest.CreatePatientOPDInvoiceTest<br/>
+<a href="#Output-445043648" onClick='toggleBox("Output-445043648", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-445043648" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-445043648">
+Navigate to Patient Info Page<br/>
+Navigated to Patient Information Page<br/>
+read data from excel<br/>
+validating the patient name with patient invoice page firstname<br/>
+Navigate to Patient invoice page<br/>
+Switching the window<br/>
+read data medicinecharge  from excel<br/>
+Enter the data into medicinecharge TextField <br/>
+read data  DoctorCharge from excel<br/>
+Enter the data into medicinecharge TextField <br/>
+click on submit button <br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.comcast.crm.HMStest.CreatePatientOPDInvoiceTest@4007f65e</td></tr>
+<tr>
+<td title='com.comcast.crm.HMStest.PatientRegistrationTest.PatientRegistration()'><b>PatientRegistration</b><br>Test class: com.comcast.crm.HMStest.PatientRegistrationTest<br/>
+<a href="#Output-1259000355" onClick='toggleBox("Output-1259000355", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1259000355" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1259000355">
+Navigate to Patient Info Page<br/>
+Navigate to Patient Registration page<br/>
+Read the data from Excel<br/>
+ Enter The Data Into FirstNmae TextField<br/>
+ Enter The Data Into LastName TextField<br/>
+Select OdpPatientDropDown<br/>
+ Enter The Data Into Address TextField<br/>
+Enter The Data Into ContactNum TextField<br/>
+ Enter The Data Into Email TextField<br/>
+Select GenderDropDown <br/>
+Enter The Data Into DOB TextField <br/>
+ Select BloodGroupDropDown <br/>
+ Click On Submit Button <br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>com.comcast.crm.HMStest.PatientRegistrationTest@6c4906d3</td></tr>
+</table><p>
+</body>
+</html>
